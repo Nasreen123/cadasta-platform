@@ -4,8 +4,8 @@ from .fields import ResourceField
 
 
 class ResourceForm(forms.ModelForm):
-    class Media:
-        js = ('js/file-upload.js',)
+    # class Media:
+        # js = ('js/file-upload.js',)
 
     class Meta:
         model = Resource

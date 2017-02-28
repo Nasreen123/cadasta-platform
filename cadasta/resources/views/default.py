@@ -105,6 +105,8 @@ class ProjectResourcesDetail(LoginPermissionRequiredMixin,
                 'id': attachment.id,
             } for attachment in attachments
         ]
+        # for attachment in attachments:
+        print(attachment_list[0]['object'])
 
         context['attachment_list'] = attachment_list
         context['success_url'] = None

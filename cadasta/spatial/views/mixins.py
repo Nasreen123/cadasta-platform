@@ -29,7 +29,7 @@ class SpatialQuerySetMixin(ProjectMixin):
         kwargs = self.kwargs
         kwargs['location'] = self.object.id
         return (reverse('organization:project-dashboard', kwargs=kwargs) +
-                '#/records/location/' + self.kwargs['location'].id)
+                '#/records/location/' + self.kwargs['location'])
 
 
 class SpatialRelationshipQuerySetMixin(ProjectMixin):
