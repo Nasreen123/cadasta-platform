@@ -209,7 +209,7 @@ var RouterMixins = {
       target.addClass('info');
       $('input[name="id"]').val(relId);
     });
-  }
+  },
 
 
   /***************
