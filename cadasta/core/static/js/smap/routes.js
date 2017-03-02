@@ -4,11 +4,11 @@ var CreateRoutes = function(){
   rm.init();
 
   function route(path, el, controller, eventHook=null) {
-    routes[path] = {};
-    routes[path].el = el;
-    routes[path].controller = controller;
-    routes[path].eventHook = eventHook;
-    var parent = this;
+    routes[path] = {
+      el: el,
+      controller: controller,
+      eventHook: eventHook
+    }
   }
 
   route('/map', 'project-detail',
