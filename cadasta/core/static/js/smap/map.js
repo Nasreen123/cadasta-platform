@@ -1,6 +1,4 @@
-var map = L.map('mapid');
-
-var SMap = (function() {
+var SMap = function(map) {
   var layerscontrol = L.control.layers().addTo(map);
 
   var geojsonTileLayer = new L.TileLayer.GeoJSON(
@@ -145,4 +143,4 @@ var SMap = (function() {
   return {
     add_map_controls: add_map_controls,
   };
-})();
+};

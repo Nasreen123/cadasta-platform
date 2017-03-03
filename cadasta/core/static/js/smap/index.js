@@ -11,8 +11,10 @@
   //   body.append($('<script src="/static/js/smap/' + js_files[i] + '"></script>'));
   // }
 
-var sr = new SimpleRouter();
+var map = L.map('mapid');
+SMap(map);
+var sr = new SimpleRouter(map);
 sr.router();
 window.addEventListener('hashchange', sr.router);
 window.addEventListener('load', sr.router);
-// });
+

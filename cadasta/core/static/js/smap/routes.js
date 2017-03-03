@@ -42,6 +42,7 @@ var CreateRoutes = function(){
     },
     function(){
       rm.formSubmission('#detail-form', rm.getCurrentLocationUrl());
+      rm.detachFormSubmission(rm.getCurrentLocationUrl());
   });
 
   route('/records/location/new', 'project-detail',
@@ -101,6 +102,7 @@ var CreateRoutes = function(){
     function() {
       rm.updateCurrentLocationUrl($("#current-location").attr('href'));
       rm.updateCurrentRelationshipUrl()
+      rm.detachFormSubmission(rm.getCurrentRelationshipUrl());
   });
 
   route('/records/relationship/edit', 'project-detail',

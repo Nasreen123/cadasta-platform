@@ -1,5 +1,5 @@
 // Based on http://joakim.beng.se/blog/posts/a-javascript-router-in-20-lines.html
-var SimpleRouter = function(){
+var SimpleRouter = function(map){
   routes = new CreateRoutes();
 
   var el = null;
@@ -48,10 +48,4 @@ var SimpleRouter = function(){
     router: router,
   };
 };
-
-$(window).on('load', function (e) {
-  var sr = new SimpleRouter(map);
-  window.addEventListener('hashchange', sr.router);
-  window.addEventListener('load', sr.router);
-});
 

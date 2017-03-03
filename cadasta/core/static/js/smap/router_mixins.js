@@ -245,5 +245,12 @@ var RouterMixins = {
         }
       });
     });
-  }
+  },
+
+  detachFormSubmission: function(success_url){
+    var parent = this;
+    $.each($('.detach-form'), function(i, form){
+      parent.formSubmission(form, success_url);
+    });
+  },
 }
