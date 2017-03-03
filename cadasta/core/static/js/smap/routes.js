@@ -26,6 +26,7 @@ var CreateRoutes = function(){
 
   route('/', 'project-detail',
     function() {
+      console.log('ProjectExtent: ', options.projectExtent)
       rm.displayDetailPannel();
       rm.resetLocationStyle();
       map.fitBounds(options.projectExtent);
