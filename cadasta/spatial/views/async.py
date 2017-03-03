@@ -105,7 +105,8 @@ class LocationsAdd(LoginPermissionRequiredMixin,
     # def get(self, request, *args, **kwargs):
     #     referrer = request.META.get('HTTP_REFERER', None)
     #     if referrer:
-    #         current_url = reverse('async:spatial:add', kwargs=self.kwargs)
+    #         current_url = reverse('organization:project-dashboard',
+    #                               kwargs=self.kwargs)
     #         if current_url not in referrer:
     #             request.session['cancel_add_location_url'] = referrer
     #     else:
@@ -117,10 +118,11 @@ class LocationsAdd(LoginPermissionRequiredMixin,
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         # cancel_url = self.request.session.get(
-        # 'cancel_add_location_url', None)
+        #     'cancel_add_location_url', None)
         # context['cancel_url'] = cancel_url or reverse(
         #             'organization:project-dashboard', kwargs=self.kwargs)
-        context['cancel_url'] = '#/overview'
+        context['cancel_url'] = reverse(
+                    'organization:project-dashboard', kwargs=self.kwargs)
         return context
 
     def get_perms_objects(self):
@@ -233,8 +235,6 @@ class LocationResourceNew(LoginPermissionRequiredMixin,
                 'location': location.id
             })
         return context
-
-    # def get_success_url
 
 
 class TenureRelationshipAdd(LoginPermissionRequiredMixin,
